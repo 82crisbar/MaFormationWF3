@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id="MonFormulaire">
+        <input type="text" required placeholder="Nom et Prenom" id="nomcomplet"/>
+        <input type="submit" value="Je Valide"/>
+    </form>
+
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        $('#MonFormulaire').on('submit',function(event) {
+            // -- Cette fonction anonyme serà executé a la soumission du formulaire. 
+            
+            // -- Permet d'annuler l'action par default du formulaire.
+            event.preventDefault();
+            $(this).replaceWith('<p>Bonjour ' + $('#nomcomplet').val() + ' !</p>');
+            
+    }); 
+    </script> 
+</body>
+</html>
