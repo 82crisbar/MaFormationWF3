@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Les Animations en JQuery</title>
+    <style>
+        .box { padding : 10px; }
+        .carre { position : relative; width: 100px; height: 100px; background: #09f }
+    </style>    
+</head>
+<body>
+    <!-- Consigne :
+    
+    Avec l'aide de animate() en JQuery:
+    
+    1: En cliquant sur le bouton deplacer sur la droite le carré de 250px;
+    2: Augmenter sa traille de 150px;
+    3: Enclencher une alerte a la fin de l'animation-->
+    <div class="box">
+        <p>
+            <button id="play">Lancer</button>
+        </p>
+        <div class="carre">Ciao</div>    
+    </div>
+     <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script>
+            $(function() {
+                //-- A. Recuperer l'evenement "click" sur le bouton
+                $("#play").click(function() {
+
+                        $(".carre").animate({
+                            left   : 250,
+                            height : 150,
+                            width  : 150
+                        }, 500, function() {
+                            alert("end of animation");
+                        });
+                });
+
+            });
+            
+            
+    
+
+        //Alternative
+        /* $(document).ready(function(){
+        $("button").click(function(){
+        $("div").animate({
+                left: '250px',
+                height: '+=150px',
+                width: '+=150px',
+                fontSize: '3em'
+            });
+        });
+    });*/
+    </script>    
+</body>
+</html>
