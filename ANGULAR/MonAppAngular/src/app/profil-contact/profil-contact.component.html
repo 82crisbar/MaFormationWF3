@@ -1,0 +1,16 @@
+<div class="jumbotron"
+      *ngIf="contact">
+
+      <!-- Avec l'expression {{ }} j'affiche le contenu de la variable dans l'application -->
+
+      <h2>
+        {{contactActif.fullname}}
+        <small>{{contactActif.username}}</small>
+      </h2>
+
+      <input class="form-control"
+        [(ngModel)]="contactActif.fullname">
+
+    </div> <!-- ./ jumbotron -->
+
+   
