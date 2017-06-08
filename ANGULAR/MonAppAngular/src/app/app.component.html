@@ -24,12 +24,18 @@
 
     </div> <!-- ./ IFcontacts -->
 
+    <!-- J'écoute ici l'évènement unContactEstCree, lorsqu'il est emit,
+            j'appel la fonction ajouterContactDansListe -->
+    <app-ajouter-contact 
+      (unContactEstCree)="ajouterContactDansListe($event)">
+      </app-ajouter-contact>
+
   </div> <!-- ./ col-sm-4 -->
 
   <div class="col-sm-8">
 
-    <!-- Appel de notre Composant app-profil -->
-    <app-profil-contact [contact] = "contactActif"></app-profil-contact>
+    <!-- Appel de notre Composant app-profil-contact -->
+    <app-profil-contact [contact]="contactActif" ></app-profil-contact>
 
     <div class="jumbotron"
       *ngIf="!contactActif">
@@ -48,4 +54,3 @@
 <footer class="text-center">
   Copyright &copy; 2017
 </footer>
-

@@ -1,0 +1,35 @@
+
+
+.navbar {
+    background: #061339;
+    border-radius: 0;
+}
+.nav-chat{
+    margin: 0;
+}
+.navbar a {
+    color:#fff;
+    font-family: 'Merienda', cursive;
+}
+.title {
+    background: #B9CDFF;
+    background-image: url("../img/background.jpg");
+    min-height: 200px;
+    
+   
+}
+
+h1 {
+    color:#FFF;
+    font-family: 'Merienda', cursive;
+    text-align: center;
+    line-height: 200px;
+    text-shadow:  2px 2px #6f6f70;
+    margin: 0;
+}
+section {
+    background: #F1F1F1;
+    
+}
+
+
