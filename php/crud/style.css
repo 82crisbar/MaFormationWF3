@@ -1,0 +1,14 @@
+footer{
+	background: grey;
+	height:20px;
+}
+
+section{
+	min-height:800px;
+	margin-top:40px;
+	height:1000px;
+}
+h1 {
+	text-align:center;
+	margin-bottom:40px;
+}

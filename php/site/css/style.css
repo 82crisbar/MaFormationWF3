@@ -1,0 +1,21 @@
+body {
+  padding-top: 50px;
+  background:url("../img/background.jpg");
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.navbar-fixed-top{
+	background:lightgrey;
+}
+.selfie{
+	margin-left:50px;
+}
+th, td {
+	color: LightSeaGreen;
+}
+h1{
+	color:white;
+}
