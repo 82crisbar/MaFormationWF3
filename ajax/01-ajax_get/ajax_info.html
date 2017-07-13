@@ -1,0 +1,98 @@
+<!--
+Reference pour l'objet XMLHttpRequest
+
+https://msdn.microsoft.com/en-us/library/ms535874(v=vs.85).aspx 
+https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest
+
+Les status de la requete XMLHttpRequest
+- 0 => Objet crée, demandenon initialisé
+- 1 => connexion avec le server etablie
+- 2 => demande envoyé et recu par le serveur 
+- 3 => traitement cote serveur
+- 4 => demande terminée et reponse reçue 
+
+Statut HTTP: 
+https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP
+"200" => "OK"
+"403" => "Forbidden"
+"404" => "Not found"
+
+Nous attendrons toujours que le statut de la requete soit a 4 et le statut HTTP soit a 200 afin de manipuler la reponse.
+
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AJAX-01</title>
+		<meta charset="utf-8" />
+		<style>
+			h1{padding:10px; background-color:darkred;color:white;font-family:calibri;}
+		</style>
+	</head>
+	<body>
+		<div id="demo">
+			<h1>Titre</h1>
+		</div>
+		<button tipe="button" id="action">Changer le titre</button>
+	</body>
+	<script>
+		// on recupere l'element action et on ajoute lors de l'evenement "click" le declanchement d'une fonction
+		document.getElementById("action").addEventListener("click",changerTitre);
+		
+		function changerTitre () {
+			//initialisation de l'objet XMLHttpRequest
+			var xhttp = new XMLHttpRequest();
+			
+			xhttp.onreadystatechange = function () {
+				console.log("Status http: " + xhttp.status);//STATUS HTTP
+				console.log("Status Ajax: " + xhttp.readyState);// STATUS REQUEST AJAX
+				// Verification si la reponse est prete
+				if(xhttp.readyState == 4 && xhttp.status == 200){
+					
+					document.getElementById("demo").innerHTML = xhttp.responseText;
+				}
+			}
+		xhttp.open("GET","ajax_info.txt", true);// On prepare // 1er argument: LA METODE // 2eme argument: LE FICHIER CIBLE // 3eme argument: L'ASYNCHRONE(par default)
+		xhttp.send();// Envoye	
+		}
+		
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

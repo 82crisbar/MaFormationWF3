@@ -1,0 +1,65 @@
+
+$(function(){
+
+    // -- Soumission du formulaire & fonction anonyme
+
+    $(".formulaire").on("submit", function(event) {
+    
+    // -- Stopper la redirection HTML5
+    event.preventDefault(); 
+
+    
+    // -- On cible la classe ".has-error"
+	// -- On retire ensuite la classe ".has-error"
+
+    $('.formulaire .has-error').removeClass('has-error'); 
+
+    // -- On réitère le même procédé pour ".textdanger"
+
+    $('.formulaire .text-danger').remove();
+    $('.formulaire .alert-danger').remove();
+
+    // -- Déclaration des variables
+    var choixchaton     = $("#choixchaton"); 
+    var motivation   = $("#motivation"); 
+
+    // -- Vérification des champs
+
+        // -- Vérification du choix des chats
+        if(choixchaton.val() == null){
+        choixchaton.parent().addClass("has-error");
+		
+		// -- Réponse en cas de mauvais choix 
+        $("<p class='text-danger'> Sélectionnez un chaton s'il vous plait :) </p>").appendTo(choixchaton.parent());}
+
+        // -- Vérification des raisons d'adoption
+       	if(motivation.val().length < 15){
+        motivation.parent().addClass("has-error");
+
+		// -- Alerte en cas de mauvais remplissage du champs "motivation"
+        $("<p class='text-danger'> Donne-nous une raison pour laquelle vous souhaitez adopter un chat (15 caractères minim ) </p>").appendTo(motivation.parent());
+        
+        }
+		// -- Validation de la demande : message de réussite
+        if($(this).find('.has-error').length == 0){
+            $(this).replaceWith('<div class="alert alert-success"> Ça s`est bien passé, nous vous tiendrons au courant dès que possible. A tres bientôt!!!</div>')
+        }
+		// Validation de la demande : message d'échec
+        else{
+            $(this).prepend('<div class="alert alert-danger">Il manque quelque chose...S`il vous plait de bien verifier le details requis dans le formulaire</div>')
+        }
+
+    });
+    $("#choixchaton").on("click", function() {
+        $('.formulaire .choixchat').removeClass('has-error');
+        $('.formulaire .text-danger').remove();
+       
+    });
+
+    $("#motivation").on("keyup", function() {
+        $('.formulaire .motivation').removeClass('has-error');
+        $('.formulaire .text-danger').remove();
+       
+    });
+
+}); 

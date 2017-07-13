@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AJAX-SELECT</title>
+		<meta charset="utf-8" />
+		<style>
+			select, input { width:100%; min-height: 28px; border: 1px solid #dedede; border-radius: 3px; color: red;}
+		</style>
+	</head>
+	<body>
+		<div style="width:30%; margin: 0 auto;">
+			<form method="post" action="">
+				<label for="pays">Pays</label>
+				<select id="pays" name="pays">
+					<option>Choisir un pays...</option>
+					<option>France</option>
+					<option>Italie</option>
+					<option>Espagne</option>
+				</select>
+				<label for="ville">Ville</label>
+				<select id="ville" name="ville"></select>
+				<hr />
+				<input type="submit" value="valider" />
+			</form>
+		</div>
+		<script>
+			var champPays = document.getElementById('pays');
+			// evenement
+			champPays.addEventListener("change", monAjax);
+			
+			function monAjax ()
+			{
+				var file = "select.php";
+				var xhttp = new XMLHttpRequest();
+
+				var valeur = champPays.value;
+				console.log(valeur);
+					
+				// Parametres
+				var param = 'pays='+valeur;	
+				
+				xhttp.open("POST", file, true);
+				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				
+				xhttp.onreadystatechange = function () 
+				{
+					if(xhttp.readyState == 4 && xhttp.status == 200)
+					{
+						console.log(xhttp.responseText);
+						var response = JSON.parse(xhttp.responseText);
+						document.getElementById('ville').innerHTML = response.resultat;
+					}
+				}
+				xhttp.send(param);
+			}
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,104 @@
+/*----------------------------- MEDIA QUERIES ----------------------------*/
+
+@media screen and (max-width:768px)
+{
+    header {
+        max-height: 250px;
+    }
+    
+    .formulaire {
+        margin-bottom: 50px;
+    }
+}   
+
+/* ----------------------------- HEADER SECTION ---------------------------*/ 
+
+.navbar {
+    background: #061339;
+    border-radius: 0;
+}
+.nav-chat{
+    margin: 0;
+}
+.navbar a {
+    color:#fff;
+    font-family: 'Merienda', cursive;
+}
+header {
+    background: #B9CDFF;
+    background-image: url("../img/background.jpg");
+    min-height: 200px;
+    
+    
+}
+
+h1 {
+    color:#FFF;
+    font-family: 'Merienda', cursive;
+    padding:75px 0px;
+    text-shadow:  2px 2px #6f6f70;
+    margin: 0;
+}
+
+/*---------------------------- FORMULAIRE ---------------------------------*/
+
+section {
+    background: #F1F1F1;
+    
+}
+.formulaire {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding:10px;
+    margin-top: 20px;
+
+}
+button{
+    margin-top: 20px;
+}
+h2 {
+     font-family: 'Merienda', cursive;
+     font-size: 20px;
+     text-align: center;
+     margin-top:50px;
+     color:#2F4073;
+
+}
+/*---------------------------- SLIDERS ------------------------------------*/
+
+#slide {
+    margin: 50px 0;
+}
+/*----------------------------- ARTICLE------------------------------------*/
+.article {
+    background: #dddddd;
+}
+
+.article h3 {
+    font-family: 'Merienda', cursive;
+    font-size: 26px;
+    color: #2F4073;
+}
+/*----------------------------- CAT HEAD SHOT -----------------------------*/
+
+#tete-chat {
+    width:100%;
+    background-color: #7885A5;
+}
+
+.article:hover #tete-chat {
+    background: #061339;
+    transition: 3s;
+}
+/*----------------------------- FOOTER ------------------------------------*/
+
+footer{
+	background: #061339;
+	color: white;
+	height: 30px;
+}
+footer p{
+	float: right;
+    margin-right: 10px;
+    margin-top:5px;
+}
