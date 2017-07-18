@@ -1,3 +1,12 @@
+<?php
+require_once("inc/init.inc.php");
+
+if(!empty($_SESSION['utilisateur']['pseudo']))
+{
+	header('location:dialogue.php');
+}
+echo '<pre>'; var_dump($_SESSION); echo '</pre>';
+?>
 <!DOCTYPE html>
 <html>
 	<head>
