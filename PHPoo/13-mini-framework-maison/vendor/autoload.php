@@ -31,7 +31,7 @@ class Autoload
 
         }
         else{
-            $path = __DIR__ . '/../src/' . implode('/', $tab) . '.php';
+            $path = __DIR__ . '/../src/' . implode('/',$tab) . '.php';
         }
         //---------------------------------------
         echo '<pre> Autoload : ' . $className . '<br />';
@@ -43,7 +43,7 @@ class Autoload
 }
 
 //--------------------------
-spl_autoload_register(array("Autoload","Inclusion_automatique"));
+spl_autoload_register(array("Autoload","inclusion_automatique"));
 //---------------------------
 /*
 Commentaires:

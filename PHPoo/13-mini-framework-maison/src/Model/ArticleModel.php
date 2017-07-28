@@ -52,6 +52,7 @@ class ArticleModel extends Model
         $resultat -> bindParam(':categorie', $categorie, PDO::PARAM_STR);
         $resultat -> execute();
 
+        $resultat -> setFetchMode(PDO::FETCH_CLASS, "Entity\Article");
         $article = $resultat -> fetchAll();
 
          if(!$categorie){
@@ -62,5 +63,4 @@ class ArticleModel extends Model
         }
 
     }
-
 }

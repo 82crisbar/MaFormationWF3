@@ -6,8 +6,13 @@ session_start();
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // Lancement de l'appliation (interupteur) :
-// $app = new Application;
-// $app -> run();
+ $app = new Manager\Application;
+ $app -> run();
+
+ // TEST FINAL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ //web/index.php?controller=article&action=afficheall
+ //web/index.php?controller=article&action=affiche&id=14
+ //web/index.php?controller=article&action=categorie&cat=pantalon
 
 //TEST 1 : Entity
 
@@ -36,13 +41,22 @@ require_once __DIR__ . '/../vendor/autoload.php';
 // echo '</pre>';
 
 //Test 4 : ArticleModel
-$am = new Model\ArticleModel;
+// $am = new Model\ArticleModel;
 
-$articles = $am -> getAllArticles();
-$articles = $am -> getArticleById(6);
-$categories = $am -> getAllCategories();
-$article2 = $am -> getAllArticlesByCategorie('Chemise');
+// $articles = $am -> getAllArticles();
+// $articles = $am -> getArticleById(6);
+// $categories = $am -> getAllCategories();
+// $article2 = $am -> getAllArticlesByCategorie('Chemise');
 
-echo '<pre>';
-var_dump($articles);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($articles);
+// echo '</pre>';
+
+// //TEST 5: ArticleController
+// $ac = new Controller\ArticleController;
+// //$ac -> afficheAll();
+// $ac -> affiche(21);
+// //$ac -> categorie('pantalon');
+
+//Test 6 : URL
+

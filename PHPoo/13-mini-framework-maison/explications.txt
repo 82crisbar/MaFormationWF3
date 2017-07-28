@@ -33,4 +33,44 @@ vendor/
 src/
     Model/
         ArticleModel.php : Ce fichier contiendra toutes les fonctions (requetes) liées à l'entité produit et demandera à Model.php d'executer des requetes génériques!
-        Si un entité a besoin de requetes specifiques (exemple: jointures) alors elles seront codées dans ce fichier.                
+        Si un entité a besoin de requetes specifiques (exemple: jointures) alors elles seront codées dans ce fichier.
+
+vendor/
+    Controller/
+        Controller.php :C'est le controller general de l'application, il a pour objective d'effectuer 2 missions:
+        -1 : Recuperer le bon Model en fonction de l'entité dans laquelle nous sommes(getModel())
+        -2 : Afficher la bonne vue avec les variables necessaires à l'affichage (render())
+
+src/
+    Controller/
+            ArticleController.php : Cette classe herite du Controleur général de l'application, et permet de declencher toutes les actions liées à l'entité article                       
+
+src/ 
+    View/
+        Article/
+            boutique.php , fiche_article.php :On recupere les fichiers crées en procedural avec quelques modifications :
+                -1 : Header, nav, et footer sont re-incorporé (temporairement)
+                -2 : On retire tous les traitements PHP
+                -3 : Simplification du PHP à l'interieur de l'HTML (formes ternaires, et contractées)
+                -4 : On remplace l'appel aux array, par des objets 
+                exemple: $article['prix'] devient $article -> getPrix()
+
+web/
+    css/, fonts/, js/, img/, photo/ : On recupere les ressources (assets) du site en procedural.Toutes les vues du site feront appel a ses ressources directement via le nom du dossier et non plus avec <?php echo URL ?>
+
+src/
+    View/
+        layout.html : Ce fichier rapresente la structure de base d'une page (header, nav, footer).Si necessaire il peut y avoir plusieurs layout (exemle: La home peut avoir une stucture trés differente de la page mentions legales).
+        le contenu dde chaque vue serà represente dans les layouts par une vue variable ($content)
+
+vendor
+    Manager/
+        Application.php : C'est la classe qui est capable de lancer mon application.Elle va recuperer les informations dans l'URL (construct()) et elle va instancier le bon controller, et la bonne methode (run()).
+        + modification de index
+        + modification des liens du sites
+
+=====> Ajout de fonctionnalites :
+        -formulaire de recherche
+        -suggestions de produit
+        -connexion
+        -commentaires sur les articles                                          
