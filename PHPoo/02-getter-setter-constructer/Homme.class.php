@@ -31,8 +31,8 @@ echo 'prenom :' .$homme->getPrenom(); // WORKS!!!
 /*
 Commentaires:
 	Pourquoi faire des GETTERS et des SETTERS?
-		-Le php est un langage qui ne type pas ses variables. Il faut donc constantement verifier l'integrité des celles-ci.Donc mettre une proprieté en private ,et créer les getters et les setters permet de verifier une seule foise l'integrité des donnés.
-		-Tout dev' qui voudra affecter une valeur DEVRA obligatoirement passer par le setter !!!
+		-Le php est un langage qui ne type pas ses variables. Il faut donc constantement verifier l'integrité des celles-ci.Donc mettre une proprieté en private ,et créer les getters et les setters permet de verifier une seule fois l'integrité des donnés.
+		-Les developpeur qui voudrà affecter une valeur DEVRA obligatoirement passer par le setter !!!
 		==> CECI EST UNE BONNE CONTRAINTE!
 		
 	$this represente l'objet en course de manipulation.

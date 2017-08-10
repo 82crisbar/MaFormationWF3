@@ -64,3 +64,6 @@ $pompe -> plainVoiture($Panda);
 
 echo 'La voiture contient apres le plein :' . $Panda -> getLitreEssence() . 'litres <br />'; 
 echo 'La pompe contient apres le plein :' .$pompe -> getLitreEssence() . 'litres <br />';
+
+
+
